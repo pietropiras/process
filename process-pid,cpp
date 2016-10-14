@@ -1,0 +1,10 @@
+main ()
+{     int number;
+
+      cout <<endl<<"            Hello Pietro"<<endl<<endl;
+      cout<<"   The PID of this process is: "<< getpid() <<endl<<endl;
+      //The following instruction will blok the process waiting for input
+      cin>> number;
+      
+Return=0;
+}
