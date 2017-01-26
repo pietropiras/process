@@ -1,0 +1,32 @@
+package threadname;
+import java.io.*;
+
+public class ThreadName 
+        
+{
+    public static void main(String[] args)throws InterruptedException
+    {
+    InputStreamReader Tastiera= new InputStreamReader(System.in);
+    BufferedReader tasto= new  BufferedReader(Tastiera);  
+    
+    System.out.println("Thread.currentThread().getName(): "+ Thread.currentThread().getName());
+    Thread thread = new Thread(new MyThread(), "second thread");
+    System.out.println("Thread.currentThread().getState(): "+ thread.getState());
+    
+    thread.start();    
+    thread.join(); 
+    System.out.println("Thread.currentThread().getState(): "+ thread.getState());
+}
+}
+
+class MyThread implements Runnable
+   {
+       
+    public void run()
+       {
+         System.out.println("Thread.currentThread().getName(): "+ Thread.currentThread().getName());
+         System.out.println("Thread.currentThread().getState(): "+ Thread.currentThread().getState());
+       }
+         
+          
+    }
